@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klimaat</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/klimaat.js" defer></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="logo">
+            <img src="./img/klimaat.jpg" alt="logo-klimaat">
+        </div>
+
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-sm-6 my-3">
+                <form>
+                    <div class="form-group d-flex">
+                        <input type="text" class="form-control p-3" id="inputCity" placeholder="Rechercher une ville, ex: Dakar">
+                        <button type="submit" class="form-control btn btn-info btn-block w-25" id="btnSubmit" >Rechercher</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-12 col-sm-6 d-flex justify-content-center my-3">
+                <div class="box-container">
+                    <div id="city" class="box"></div>
+                    <div id="temp" class="box"></div>
+                    <div id="humidity" class="box"></div>
+                    <div id="wind" class="box"></div>
+                </div>
+                
+            </div>
+
+            <div class="col-12 col-sm-6 d-flex justify-content-center p-3 w-100 byLS">&copy; Layesall</div>
+           
+        </div>
+    </div>
+</body>
+</html>
