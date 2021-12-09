@@ -1,71 +1,79 @@
+@import url('./ecorp.css');
+
 body{
-    background-image: url('https://wallpaperaccess.com/full/1194086.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    color: #fdfeff;
+    background: #212529 url('https://wallpaperaccess.com/full/1194086.jpg') center/cover no-repeat;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
     height: 100vh;
-    color: rgb(0, 200, 250);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
-.container .row{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* border: chartreuse 3px solid; */
+a, i{
+    text-decoration: none;
+    color: #fdfeff88;
 }
 
-.box-container{
-    width: 300px;
-    height: 300px;
-    display: flex;
-    flex-wrap: wrap;
+a:hover, i:hover{
+    color: #fdfeff;
 }
 
+
+
+footer{
+    color: #fdfeff88;
+}
+
+/*NAVBAR*/
+.navbar-brand{
+    color: #fdfeff !important;
+    text-transform: uppercase;
+    text-decoration: underline #2980b9 0.5rem;
+    letter-spacing: 2px;
+}
+.navbar-toggler{
+    background: #fdfeff88;
+}
+
+/*OFFCANVAS*/
+.offcanvas{
+    background: #3498dbc5;
+}
+
+/*BOX-INFO-Display*/
 .box{
-    width: 150px;
-    height: 150px;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    color: white;
+    color: #fdfeff;
+    background-color: #3498db1e;
+    width: 100%;
+    min-height: 7rem;
+    font-size: large;
+    border-radius: 5px;
+    margin: 0.5rem 0;
 }
 
-#city{
-    background-color: rgba(41, 128, 185, 0.75);
+.box:hover{
+    background-color: #fdfeff2c;
+    border: #2980b9 1px solid;
 }
 
-#temp{
-    background-color: rgba(43, 78, 101, 0.75);
+.box-city {
+    width: 100%;
 }
 
-#humidity{
-    background-color: rgba(52, 152, 219, 0.75);
+.box-city{
+    background-color: #2980b91e;
+    font-size: x-large;
 }
 
-#wind{
-    background-color: rgba(143, 146, 154, 0.75);
-}
 
-.byLS {
+
+.box-name{
     position: absolute;
     bottom: 0;
-    background-color: rgba(2, 81, 100, 0.541);
-}
-.byLS, h1{
-    color: white;
-}
-
-.logo {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-}
-.logo img {
-    width: 20%;
+    font-size: small;
+    color: #fdfeff88;
 }

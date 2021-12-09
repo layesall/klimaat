@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
+
+
+/*
+----------------------------------------------
+            by L A Y E S A L L
+----------------------------------------------
+*/
+#by-layesall{
+    color: #fdfeff88;
+    text-decoration: none;
+    letter-spacing: 5px;
+    font-family: 'Genos', sans-serif;
+    font-size: x-large;
+    margin: 3px;
+}
+
+#by-layesall:hover{
+    color: #FDFEFF;
+}
+
+#madebylayesall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

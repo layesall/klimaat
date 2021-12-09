@@ -1,50 +1,138 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klimaat</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
+    <title>Klimaat | Négociation avec la méteo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/klimaat.js" defer></script>
 </head>
 <body>
-    <div class="container">
-
-        <div class="logo">
-            <img src="./img/klimaat.jpg" alt="logo-klimaat">
-        </div>
-
-        <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-sm-6 my-3">
-                <form>
-                    <div class="form-group d-flex">
-                        <input type="text" class="form-control p-3" id="inputCity" placeholder="Rechercher une ville, ex: Dakar">
-                        <button type="submit" class="form-control btn btn-info btn-block w-25" id="btnSubmit" >Rechercher</button>
+    <main class="container">
+        <div class="row d-flex justify-content-center align-items-center flex-column">
+            <div class="col-md-6">
+                <header class="mb-5">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container">
+                            <a class="navbar-brand" href="index.html" title="Klimaat, la méteo actuelle">
+                                Klimaat
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon "></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" title="Say Hello"
+                                            data-bs-toggle="offcanvas" 
+                                            data-bs-target="#offcanvasTop" 
+                                            aria-controls="offcanvasTop">
+                                            <i class="far fa-smile-wink fs-3"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+                <section class="container">
+                    <div class="row d-flex justify-content-center align-items-start">
+                        <div class="col-md-12">
+                            <div class="row my-2">
+                                <div class="col-md-12">
+                                    <form class="d-flex">
+                                        <input type="search" id="inputCity" class="form-control me-2" placeholder="Nom d'une ville" aria-label="Search">
+                                        <button type="submit" id="submitCity" class="btn btn-outline-secondary">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-md-12">
+                                    <div class="box box-city">
+                                        <span id="city"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-12 d-flex justify-content-center align-items-center flex-column">
+                                    <div class="box box-temp">
+                                        <i class='fas fa-thermometer-half'></i>
+                                        <span id="temp"></span>
+                                        <small class="box-name">temperature</small>
+                                    </div>
+                                    <div class="box box-humidity">
+                                        <i class='fas fa-tint'></i>
+                                        <span id="humidity"></span>
+                                        <small class="box-name">humidity</small>
+                                    </div>
+                                    <div class="box box-wind">
+                                        <i class='fas fa-wind'></i>
+                                        <span id="wind"></span>
+                                        <small class="box-name">wind speed</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </form>
+                </section>
+                <footer class="mt-5 mb-2">
+                    <div class="container">
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="col-12 d-flex justify-content-center align-items-center">
+                                <div id="madebylayesall">
+                                    <span class="small">&copy;</span>
+                                    <a href="https://layesall.com/" 
+                                        id="by-layesall"
+                                        target="_blank">
+                                        Layesall
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
-
-            <div class="col-12 col-sm-6 d-flex justify-content-center my-3">
-                <div class="box-container">
-                    <div id="city" class="box"></div>
-                    <div id="temp" class="box"></div>
-                    <div id="humidity" class="box"></div>
-                    <div id="wind" class="box"></div>
-                </div>
-                
-            </div>
-
-            <div class="col-12 col-sm-6 d-flex justify-content-center p-3 w-100 byLS">&copy; Layesall</div>
-           
         </div>
-    </div>
+        
+    </main>
+    
+    <!-- about::start -->
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+            <div class="offcanvas-header">
+                <h5 id="offcanvasTopLabel"> <i class="far fa-copyright"></i> Klimaat &middot; 2021 &middot; Layesall</h5>
+                <button type="button" class="btn-close text-white-50" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Simple et efficace pour consulter la méteo !</p>
+                <h6>Utilisation</h6>
+                <ul>
+                    <li>Entrer le nom d'une ville (valide) dans le champ !</li>
+                    <li>Cliquez sur le bouton [icon-search]</li>
+                    <li>Le resultat affiche 
+                        <ul>
+                            <li>nom de la ville</li>
+                            <li>temperature</li>
+                            <li>pourcentage d'humidité</li>
+                            <li>vitesse du vent</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h6 class="border-top border-2 border-light d-flex align-items-center">
+                    made width &hearts; by 
+                    <a href="https://layesall.com" target="_blank" class="text-uppercase fw-bolded ms-1">Layesall</a>
+                </h6>
+            </div>
+        </div>
+    <!-- about::end -->
+
+    <!-- script js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/klimaat.js"></script>
 </body>
 </html>
